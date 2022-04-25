@@ -57,7 +57,7 @@ function App(props) {
 
   return (
     <div className="app">
-      <h1>Hello Cecilie</h1>
+      <h1>Hello World</h1>
       <main>
         <section>
           <CardList products={products} />
