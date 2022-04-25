@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+h1 {
+  text-align: center;
+}
+main {
+  display: grid;
+  grid-template-columns: auto minmax(0, 800px) auto;
+  place-content: center;
+}
+
+section {
+  grid-column: 2/3;
+  padding: 2rem;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: flex;
+  flex-wrap: wrap;
+}
+article {
+  background-color: rosybrown;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 1rem;
+  width: 15rem;
+}
+.cards {
+  color: white;
+  display: flex;
+  gap: 2rem;
+}

@@ -1,23 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./footer";
 
-function App() {
+function Card(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <article>
+      <h2>{props.type}</h2>
+      <p>{props.size}</p>
+      <p>{props.price}</p>
+      <button>Køb nu</button>
+    </article>
+  );
+}
+
+function CardList(props) {
+  const mappedData = props.products.map((product) => <Card {...product} />);
+  return (
+    <ul>
+      <li>{mappedData}</li>
+    </ul>
+  );
+}
+
+function App(props) {
+  const products = [
+    {
+      type: "Tshirt",
+      size: "Medium",
+      price: 2515,
+    },
+    {
+      type: "Pants",
+      size: "Large",
+      price: 2675,
+    },
+    {
+      type: "Dress",
+      size: "Small",
+      price: 3675,
+    },
+    {
+      type: "Jacket",
+      size: "Medium",
+      price: 4687,
+    },
+  ];
+  const links = [
+    {
+      name: "Fronter",
+      aLink: "https://kea-fronter.itslearning.com/",
+    },
+    {
+      name: "IKEA",
+      aLink: "https://www.ikea.com/",
+    },
+  ];
+
+  return (
+    <div className="app">
+      <h1>Hello Cecilie</h1>
+      <main>
+        <section>
+          <CardList products={products} />
+        </section>
+      </main>
+      <Footer links={links}></Footer>
     </div>
   );
 }
